@@ -1,0 +1,99 @@
+/* ==========================================
+   ABOUT PAGE STYLING
+   ========================================== */
+
+/* About Hero Banner Enhancement */
+.about-hero-banner {
+    position: relative;
+    padding: 220px 0 120px;
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 71, 161, 0.75);
+}
+
+/* ==========================================
+   STATS COUNTER SECTION
+   ========================================== */
+.stats-section {
+    background: var(--primary);
+    color: #fff;
+}
+
+.stats-section h2 {
+    color: #fff;
+    font-size: 55px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.stats-section p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats-section .grid-4 > div:hover h2 {
+    transform: scale(1.15);
+}
+
+/* Counter Animation */
+.counter-number {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 55px;
+    color: #fff;
+    display: inline-block;
+}
+
+.counter-number.animated {
+    animation: counterPulse 0.5s ease;
+}
+
+@keyframes counterPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* ==========================================
+   FOUNDER CARDS ENHANCEMENTS
+   ========================================== */
+.founder-card {
+    transition: all 0.4s ease;
+}
+
+.founder-card:hover {
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transform: translateY(-8px);
+}
+
+/* ==========================================
+   ABOUT PAGE - RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+    .stats-section h2,
+    .counter-number {
+        font-size: 40px;
+    }
+    .stats-section p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-section h2,
+    .counter-number {
+        font-size: 32px;
+    }
+}
