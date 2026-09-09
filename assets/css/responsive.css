@@ -1,110 +1,245 @@
-/* Large Desktops */
-@media (min-width: 1920px) {
+/* ==========================================================================
+   DYNAMIC DISCOVERY - COMPREHENSIVE RESPONSIVE STYLESHEET
+   Mobile (< 576px), Mobile Small (< 400px), Tablet (768px - 1024px), 
+   Laptop (1025px - 1366px), Desktop (> 1366px)
+   ========================================================================== */
+
+/* 1. ULTRA WIDESCREEN & LARGE DESKTOPS (> 1600px) */
+@media (min-width: 1600px) {
     .container {
-        max-width: 1600px;
+        max-width: 1500px;
     }
     .hero-content h1 {
-        font-size: 95px;
+        font-size: 80px;
     }
-}
-
-/* Laptops & Small Desktops */
-@media (max-width: 1366px) {
-    .hero-content h1 {
-        font-size: 60px;
-    }
-    .section-title h2,
-    .about-content h2,
     .inner-banner h1 {
-        font-size: 42px;
+        font-size: 65px;
     }
 }
 
-/* Tablets (iPad Pro / iPad) */
+/* 2. STANDARD DESKTOPS & LAPTOPS (1025px to 1366px) */
+@media (max-width: 1366px) {
+    .container {
+        max-width: 1200px;
+    }
+    .hero-content h1 {
+        font-size: 58px;
+    }
+    .inner-banner h1 {
+        font-size: 48px;
+    }
+    .section-title h2 {
+        font-size: 38px;
+    }
+}
+
+/* 3. TABLETS & SMALL LAPTOPS (769px to 1024px) */
 @media (max-width: 1024px) {
-    .grid-4, .grid-3 {
+    .container {
+        max-width: 960px;
+        padding: 0 25px;
+    }
+    .grid-4 {
         grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
     .grid-2 {
         gap: 30px;
     }
     .hero-content h1 {
-        font-size: 50px;
+        font-size: 46px;
+    }
+    .inner-banner {
+        min-height: 60vh !important;
+        padding: 130px 0 60px !important;
+    }
+    .inner-banner h1 {
+        font-size: 40px !important;
     }
     .dual-section {
         padding: 60px 0;
     }
-    .footer-box {
-        padding-left: 0 !important;
-    }
-    /* Let header stack if it runs out of space */
     .navbar ul {
         gap: 20px;
     }
+    .navbar ul li a {
+        font-size: 14px;
+    }
+    .footer-box {
+        padding-left: 0 !important;
+    }
 }
 
-/* Mobile & Small Tablets */
+/* 4. MOBILE & SMALL TABLETS (577px to 768px) */
 @media (max-width: 768px) {
-    .grid-4, .grid-3, .grid-2 {
+    .container {
+        padding: 0 20px;
+    }
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .grid-3, .grid-2 {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
     .dual-image {
         order: -1;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+    }
+    
+    /* Main Navigation Drawer for Mobile */
+    .main-header {
+        padding: 12px 0;
     }
     .main-header .container {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
+        position: relative;
     }
     .mobile-toggle {
-        display: block;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
         font-size: 24px;
         cursor: pointer;
         color: var(--secondary);
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: rgba(13, 71, 161, 0.06);
         order: 3;
     }
     .header-action {
         display: block;
         order: 2;
         margin-left: auto;
-        margin-right: 20px;
+        margin-right: 15px;
     }
     .header-action .primary-btn {
         padding: 8px 16px;
         font-size: 12px;
+        letter-spacing: 0.5px;
     }
     .navbar {
         display: none;
         width: 100%;
         background: #ffffff;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-        padding: 20px 0;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        padding: 25px 20px;
         position: absolute;
         top: 100%;
         left: 0;
+        border-top: 2px solid var(--primary);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1001;
     }
     .navbar.show {
-        display: block;
+        display: block !important;
+        animation: slideDown 0.3s ease forwards;
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
     .navbar ul {
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        align-items: stretch;
+        gap: 15px;
     }
+    .navbar ul li a {
+        display: block;
+        padding: 10px 15px;
+        font-size: 15px;
+        border-radius: 6px;
+    }
+    .navbar ul li a:hover, .navbar ul li a.active {
+        background: rgba(244, 67, 54, 0.08);
+    }
+    
+    /* Inner Page Banners */
+    .inner-banner {
+        min-height: 50vh !important;
+        padding: 120px 15px 50px !important;
+    }
+    .inner-banner h1 {
+        font-size: 34px !important;
+    }
+    .inner-banner p {
+        font-size: 16px !important;
+    }
+    
+    /* Hero Section */
     .hero-content h1 {
-        font-size: 42px;
+        font-size: 36px;
+    }
+    .hero-content p {
+        font-size: 16px;
     }
     .hero-buttons {
         flex-direction: column;
+        gap: 15px;
+        width: 100%;
     }
+    .hero-buttons .primary-btn,
+    .hero-buttons .secondary-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Section Padding & Headings */
     .section-padding, .dual-section {
-        padding: 50px 0;
+        padding: 45px 0;
+    }
+    .section-title h2 {
+        font-size: 30px;
+    }
+    
+    /* Stats Section */
+    .stats-section {
+        padding: 25px 0 !important;
+    }
+    .stats-section h2, .counter-number {
+        font-size: 34px !important;
+    }
+    .stats-section p {
+        font-size: 13px !important;
+    }
+    
+    /* WhatsApp QR Section */
+    .whatsapp-qr-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+        gap: 25px;
+    }
+    .whatsapp-qr-img {
+        width: 180px;
+    }
+    
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        font-size: 28px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    /* Footer */
+    .main-footer {
+        padding: 50px 0 20px;
     }
     .footer-box {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+        padding-left: 0 !important;
     }
     .footer-box ul li {
         text-align: center;
@@ -115,31 +250,56 @@
     .footer-box div[style*="display: flex"] {
         justify-content: center;
     }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 32px;
-    }
-    .section-title h2,
-    .about-content h2,
-    .inner-banner h1 {
-        font-size: 28px;
-    }
-    .hero-content p {
-        font-size: 16px;
-    }
-    .primary-btn,
-    .secondary-btn {
-        width: 100%;
-        text-align: center;
+    .footer-logo-box {
+        margin: 0 auto 15px !important;
     }
 }
 
-/* Very Small Mobile */
-@media (max-width: 364px) {
+/* 5. SMALL MOBILE PHONES (320px to 576px) */
+@media (max-width: 576px) {
+    .grid-4 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .logo img {
+        height: 42px;
+    }
     .hero-content h1 {
+        font-size: 30px;
+    }
+    .section-title h2 {
         font-size: 26px;
+    }
+    .inner-banner h1 {
+        font-size: 28px !important;
+    }
+    .inner-banner p {
+        font-size: 15px !important;
+    }
+    .contact-info-card, .contact-form-card {
+        padding: 25px 15px;
+    }
+    .form-group label {
+        font-size: 14px;
+    }
+    .primary-btn, .secondary-btn {
+        padding: 12px 24px;
+        font-size: 13px;
+    }
+}
+
+/* 6. VERY SMALL MOBILE (Up to 380px) */
+@media (max-width: 380px) {
+    .hero-content h1 {
+        font-size: 25px;
+    }
+    .header-action {
+        display: none; /* Hide top CTA on ultra small screens to preserve logo space */
+    }
+    .inner-banner h1 {
+        font-size: 24px !important;
+    }
+    .whatsapp-qr-img {
+        width: 150px;
     }
 }
