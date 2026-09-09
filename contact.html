@@ -34,10 +34,11 @@
     </div>
 </header>
 
-<section class="inner-banner">
-    <div class="container">
-        <h1>Get in Touch</h1>
-        <p>We would love to hear from you. Reach out for partnerships, inquiries, or event support.</p>
+<section class="inner-banner" style="background: url('assets/images/sports_banner.png') center/cover no-repeat; position: relative; width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.3) 100%);"></div>
+    <div class="container" style="position: relative; z-index: 1; text-align: center;">
+        <h1 style="color: #ffffff; font-size: 60px; font-weight: 800; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Get in Touch</h1>
+        <p style="color: #f1f5f9; font-size: 22px; max-width: 800px; margin: 15px auto 0; text-shadow: 0 1px 6px rgba(0,0,0,0.5); line-height: 1.6;">We would love to hear from you. Reach out for partnerships, inquiries, or event support.</p>
     </div>
 </section>
 
@@ -58,7 +59,22 @@
                     <i class="fa-solid fa-envelope"></i>
                     <span>CEO.dynamicdiscovery@gmail.com</span>
                 </p>
-                <div style="margin-top: 40px;">
+                <div style="margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 25px;">
+                    <h4 style="margin-bottom: 15px; color: var(--text-dark); display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 24px;"></i> Connect on WhatsApp
+                    </h4>
+                    <div style="display: flex; gap: 20px; align-items: center;">
+                        <img src="assets/images/whatsapp_qr.png" alt="WhatsApp QR Code" style="width: 110px; border-radius: 12px; border: 3px solid #25d366; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <div>
+                            <p style="font-size: 13px; color: #64748b; margin-bottom: 10px; line-height: 1.4;">Scan code to get our contact number instantly</p>
+                            <a href="https://wa.me/qr/GG3N3EUP7WODK1" target="_blank" class="whatsapp-btn" style="padding: 8px 16px; font-size: 13px;">
+                                <i class="fa-brands fa-whatsapp"></i> Open WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 25px;">
                     <h4 style="margin-bottom: 15px; color: var(--text-dark);">Follow Us</h4>
                     <div class="social-links">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -103,8 +119,10 @@
     <div class="container">
         <div class="grid-3">
             <div class="footer-box">
-                <img src="assets/images/dynamiclogo.png.png" alt="Dynamic Discovery" style="height: 60px; filter: brightness(0) invert(1); margin-bottom: 20px;">
-                <p>Nurturing with Physical Education. Innovating Sports Inspiring Excellence.</p>
+                <div class="footer-logo-box">
+                    <img src="assets/images/dynamiclogo.png.png" alt="Dynamic Discovery Logo">
+                </div>
+                <p style="display: block; color: #cbd5e1; font-size: 15px; line-height: 1.6;">Nurturing with Physical Education. Innovating Sports Inspiring Excellence.</p>
             </div>
             
             <div class="footer-box" style="padding-left: 50px;">
@@ -135,6 +153,11 @@
         </div>
     </div>
 </footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/qr/GG3N3EUP7WODK1" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <script src="assets/js/main.js"></script>
 </body>

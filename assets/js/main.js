@@ -67,69 +67,55 @@ navLinks.forEach(link => {
 // Counter Animation (Auto Count-Up)
 // Numbers count up when they scroll into view
 // ==========================================
-function animateCounters() {
-    // Find all h2 elements inside the red stats section
-    const statsSections = document.querySelectorAll('.section-padding[style*="--primary"], .stats-section');
+function animateCounters(statsSection) {
+    const counters = statsSection.querySelectorAll('h2');
     
-    statsSections.forEach(section => {
-        const counters = section.querySelectorAll('h2');
+    counters.forEach(counter => {
+        const targetText = counter.getAttribute('data-target') || counter.textContent.trim();
         
-        counters.forEach(counter => {
-            const text = counter.textContent.trim();
-            
-            // Parse the number and suffix (e.g., "10+" -> 10, "+")
-            const match = text.match(/^([\d]+)(.*)/);
-            if (!match) return;
-            
-            const target = parseInt(match[1]);
-            const suffix = match[2] || '';
-            
-            // Don't re-animate
-            if (counter.dataset.animated === 'true') return;
-            counter.dataset.animated = 'true';
-            
-            // Start from 0 and count up
-            let current = 0;
-            const duration = 2000; // 2 seconds
-            const increment = target / (duration / 16); // ~60fps
-            
-            counter.textContent = '0' + suffix;
-            
-            const updateCounter = () => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    counter.textContent = target + suffix;
-                    return;
-                }
+        // Parse the number and suffix (e.g., "15+" -> 15, "+")
+        const match = targetText.match(/^([\d]+)(.*)/);
+        if (!match) return;
+        
+        const target = parseInt(match[1]);
+        const suffix = match[2] || '';
+        
+        if (counter.dataset.animated === 'true') return;
+        counter.dataset.animated = 'true';
+        
+        let current = 0;
+        const duration = 1800; // 1.8s
+        const steps = 50;
+        const increment = target / steps;
+        const stepTime = duration / steps;
+        
+        counter.textContent = '0' + suffix;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                counter.textContent = target + suffix;
+                clearInterval(timer);
+            } else {
                 counter.textContent = Math.floor(current) + suffix;
-                requestAnimationFrame(updateCounter);
-            };
-            
-            requestAnimationFrame(updateCounter);
-        });
+            }
+        }, stepTime);
     });
 }
 
-// Intersection Observer - trigger counter when section is visible
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.3 });
-
-// Observe all stats sections
 document.addEventListener('DOMContentLoaded', () => {
-    // Target the red background stats sections
-    const targets = document.querySelectorAll('.section-padding[style*="primary"]');
-    targets.forEach(el => statsObserver.observe(el));
-    
-    // Also look for stats-section class
-    const statsClass = document.querySelectorAll('.stats-section');
-    statsClass.forEach(el => statsObserver.observe(el));
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters(entry.target);
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    const statsSections = document.querySelectorAll('.stats-section, .section-padding[style*="primary"]');
+    statsSections.forEach(sec => statsObserver.observe(sec));
 });
 
 // ==========================================
