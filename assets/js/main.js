@@ -32,6 +32,8 @@ function updateActiveMenu() {
             link.classList.add('active');
         } else if (currentPath === 'projects.html' && linkPath === 'projects.html') {
             link.classList.add('active');
+        } else if (currentPath === 'ccl10.html' && linkPath === 'ccl10.html') {
+            link.classList.add('active');
         } else if ((currentPath === '' || currentPath === 'index.html') && linkPath.startsWith('index.html')) {
             // For index.html sections
             if (currentHash === '' && linkPath === 'index.html') {
