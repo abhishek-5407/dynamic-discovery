@@ -67,25 +67,22 @@ textarea.form-control {
 }
 
 /* Social Links */
-.social-links a {
-    width: 45px;
-    height: 45px;
-    border-radius: 5px;
-    background: #fff;
-    display: inline-flex;
+.social-links {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    border: 1px solid var(--border-color);
-    font-size: 20px;
-    transition: 0.3s;
-    color: var(--secondary);
-    margin-right: 10px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-.social-links a:hover {
-    background: var(--primary);
-    color: #fff;
-    border-color: var(--primary);
+.contact-info-card .social-icon-btn {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.contact-info-card .social-icon-btn:hover {
+    color: #ffffff;
 }
 
 /* ==========================================

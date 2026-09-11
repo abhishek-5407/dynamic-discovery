@@ -533,6 +533,94 @@ img {
     padding-left: 5px;
 }
 
+/* Social Icons - Animated SVG Icons */
+.social-icons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icon-btn {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.social-icon-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.social-icon-btn:hover {
+    transform: translateY(-5px) scale(1.12);
+}
+
+.social-icon-btn:hover svg {
+    transform: scale(1.15);
+}
+
+.social-icon-btn:active {
+    transform: translateY(-1px) scale(0.92);
+    transition: transform 0.1s ease;
+}
+
+/* YouTube Specific Styling & Hover Glow */
+.social-icon-btn.youtube:hover {
+    background: #ff0000;
+    border-color: #ff0000;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(255, 0, 0, 0.55);
+}
+
+/* Instagram Specific Styling & Hover Glow */
+.social-icon-btn.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(214, 36, 159, 0.55);
+}
+
+/* Facebook Specific Styling & Hover Glow */
+.social-icon-btn.facebook:hover {
+    background: #1877f2;
+    border-color: #1877f2;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(24, 119, 242, 0.55);
+}
+
+/* LinkedIn Specific Styling & Hover Glow */
+.social-icon-btn.linkedin:hover {
+    background: #0077b5;
+    border-color: #0077b5;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 119, 181, 0.55);
+}
+
+/* Twitter/X Specific Styling & Hover Glow */
+.social-icon-btn.twitter:hover {
+    background: #000000;
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
 /* Newsletter Input */
 .newsletter-input {
     display: flex;
